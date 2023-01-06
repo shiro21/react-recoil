@@ -1,0 +1,16 @@
+.main_contents_wrap {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    > div {
+        margin: 1rem 0;
+    }
+
+    .array_wrap {
+        > div {
+            padding: 1rem 0;
+            color: #222;
+            > span { font-weight: 700; color: #DDD; margin-right: .3rem; }
+        }
+    }
+}

@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+### Recoil의 기본
+* RecoilRoot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Recoil State를 사용하는 Component는 부모 트리 어딘가에 나타나는 RecoilRoot가 필요합니다. App Component가 RecoilRoot를 넣기 가장 좋은 Component입니다.
 
-## Available Scripts
+ 
 
-In the project directory, you can run:
+* Atom
 
-### `npm start`
+atom은 상태( State )의 일부를 나타냅니다. atom은 어떤 Component에서나 읽고 쓸 수 있습니다. atom의 값을 읽는 Component들은 암묵적으로 atom을 구독합니다. 그래서 atom에 어떤 변화가 생기면 그 atom을 구독하고 있는 모든 Component들이 재 렌더링 되는 결과가 발생합니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* useRecoilState
 
-### `npm test`
+Component가 atom을 읽고 쓰게 하기 위해서는 useRecoilState()를 사용해야 합니다. [ 사용법은 useState()와 비슷합니다. ]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ 
 
-### `npm run build`
+* Selector
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+selector는 파생된 상태( Derived State )의 일부를 나타냅니다. 파생된 상태는 상태의 변화입니다. 파생된 상태를 어떤 방법으로 주어진 상태를 수정하는 순수 함수에 전달된 상태의 결과물로 생각 할 수 있습니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* useRecoilValue
 
-### `npm run eject`
+useRecoilValue()을 사용해서 결과물의 값을 읽을 수 있습니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* persistAtom
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+persistAtom을 사용해서 localStorage에 저장 할 수있습니다.
